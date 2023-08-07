@@ -6,16 +6,12 @@ class Solution:
             for i in range(len(s)):
                 if (s[i] == " "):
                     if(int(s[i-1]) == index):
-                        if(index==1):
-                            sorted_sentence += s[index_prev: i-1]
-                        else:
-                            sorted_sentence += " " + s[index_prev: i-1]
+                        sorted_sentence += s[index_prev: i-1] + " "
                     index_prev = i + 1
-                if((i==len(s)-1) and int(s[i])==index):
-                    if(index==1):
-                        sorted_sentence += s[index_prev: i]
-                    else:
-                        sorted_sentence += " " + s[index_prev: i]
+                if(i==len(s-1)):
+                    sorted_sentence += s[index_prev: i] + " "
                     index_prev = i + 1
-
         return sorted_sentence
+x = Solution()
+s="is2 sentence4 This1 a3"
+print(x.sortSentence(s))
